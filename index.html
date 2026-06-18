@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CurrencyX | Live Currency Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="background-orb orb-1"></div>
+  <div class="background-orb orb-2"></div>
+
+  <header class="top-bar">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">$</span>
+        <span>CurrencyX</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="toggle-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Real-time exchange</p>
+          <h1>Convert currencies across the world in seconds.</h1>
+          <p class="subtext">Track live rates, compare popular pairs, and make confident international decisions.</p>
+          <div class="hero-actions">
+            <a href="#converter" class="btn btn-primary">Start converting</a>
+            <a href="about.html" class="btn btn-secondary">How it works</a>
+          </div>
+          <div class="trust-row">
+            <span>✅ 180+ currencies</span>
+            <span>✅ Live API updates</span>
+            <span>✅ Secure & instant</span>
+          </div>
+        </div>
+
+        <div class="converter-panel" id="converter">
+          <div class="converter-card glass-card">
+            <div class="converter-header">
+              <div>
+                <p class="eyebrow small">Converter</p>
+                <h2>Currency exchange</h2>
+              </div>
+              <span class="rate-pill" id="liveBadge">Live</span>
+            </div>
+
+            <div class="input-group">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" value="1" min="0" step="any" />
+            </div>
+
+            <div class="currency-grid">
+              <div class="field-group">
+                <label for="fromSearch">From</label>
+                <input type="text" id="fromSearch" class="search-input" placeholder="Search currency" />
+                <select id="fromCurrency" class="currency-select" size="8"></select>
+              </div>
+
+              <button class="swap-btn" id="swapBtn" aria-label="Swap currencies">⇄</button>
+
+              <div class="field-group">
+                <label for="toSearch">To</label>
+                <input type="text" id="toSearch" class="search-input" placeholder="Search currency" />
+                <select id="toCurrency" class="currency-select" size="8"></select>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="convertBtn">Convert now</button>
+
+            <div class="result-box" id="resultBox">
+              <p class="result-label">Converted amount</p>
+              <h3 id="resultAmount">0.00</h3>
+              <p id="exchangeRateText">1 USD = 0 INR</p>
+            </div>
+
+            <p class="error-message" id="errorMessage"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card glass-card">
+          <h3 id="marketStatus">24/7</h3>
+          <p>Updated rates</p>
+        </div>
+        <div class="stat-card glass-card">
+          <h3>180+</h3>
+          <p>Supported currencies</p>
+        </div>
+        <div class="stat-card glass-card">
+          <h3>99.9%</h3>
+          <p>API uptime</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Popular pairs</p>
+            <h2>Trending conversions</h2>
+          </div>
+        </div>
+        <div class="popular-grid" id="popularPairs"></div>
+      </div>
+    </section>
+
+    <section class="recent-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Recent</p>
+            <h2>Recent conversions</h2>
+          </div>
+        </div>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 CurrencyX. All rights reserved.</p>
+      <div>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
